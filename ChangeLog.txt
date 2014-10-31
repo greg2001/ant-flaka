@@ -1,3 +1,10 @@
+1.03.00 (unofficial)
+* BUGFIX: Issue 19:	Flaka impacts default Ant task local [http://code.google.com/p/flaka/issues/detail?id=19]
+* BUGFIX: All whitespace-only strings are be converted to empty strings, so that
+  <pathconvert pathsep=" "...
+  becomes
+  <pathconvert pathsep=""...
+  
 1.02.01
 * [http://code.google.com/p/flaka/issues/detail?id=4] rebuilding flaka with
 Ant 1.8 to avoid PropertyHelper12.class problem. No changes in source code.
