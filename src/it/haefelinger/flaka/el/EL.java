@@ -616,7 +616,7 @@ public final class EL {
     Object obj = null;
     ValueExpression ve = null;
     // TODO: necessary?
-    if (expr == null || expr.matches("\\s*"))
+    if (expr == null)
       return null;
     try {
       ve = this.factory.createValueExpression(this.context, expr, clazz);
@@ -690,7 +690,7 @@ public final class EL {
           switch (meta.type()) {
           case FUNCTION: {
             this.context.setFunction(ns, name, m);
-            System.out.printf("%s imported as %s..\n", m, name);
+            //System.out.printf("%s imported as %s..\n", m, name);
             passed++;
             break;
           }
@@ -698,7 +698,7 @@ public final class EL {
             Object obj = m.invoke(null);
             // TODO: namespace???
             this.vardef(name, obj, obj.getClass());
-            System.out.printf("%s imported as %s..\n", obj, name);
+            //System.out.printf("%s imported as %s..\n", obj, name);
             passed++;
             break;
           }
@@ -711,7 +711,7 @@ public final class EL {
             // things slower cause of some reflection overhead.
             Method func = (Method) m.invoke(null);
             this.context.setFunction(ns, name, func);
-            System.out.printf("%s imported as %s..\n", func, name);
+            //System.out.printf("%s imported as %s..\n", func, name);
             passed++;
             break;
           }
@@ -728,12 +728,12 @@ public final class EL {
         failed++;
       }
     }
-    System.out.printf("Loaded %d/%d annotated functions\n", passed, (passed
-        + failed + ignored));
-
+//    System.out.printf("Loaded %d/%d annotated functions\n", passed, (passed
+//        + failed + ignored));
+        
     return this;
   }
-
+  
   public EL sourceFunctions(String ns, String clazz) throws SecurityException,
       ClassNotFoundException {
     clazz = Static.trim2(clazz, null);

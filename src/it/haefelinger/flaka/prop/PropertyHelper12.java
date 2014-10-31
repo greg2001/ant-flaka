@@ -8,6 +8,7 @@ import java.util.Hashtable;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.PropertyHelper;
+import org.apache.tools.ant.property.LocalProperties;
 
 /**
  * Deals with properties - substitution, dynamic properties, etc.
@@ -102,6 +103,7 @@ public class PropertyHelper12 extends PropertyHelper implements
       throw new BuildException("uups, Ant's interface changed again.");
     }
     copyProperties(otherhelper);
+    add(LocalProperties.get(project));
   }
 
   /**
