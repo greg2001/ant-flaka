@@ -1,4 +1,4 @@
-#[Flaka ANT plugin](https://code.google.com/p/flaka/) project clone.
+#[Flaka Ant plugin](http://code.google.com/p/flaka/) project clone.
 
 The original project seems to be abandoned, this is an attempt to fix some severe compatibility issues with newer ANT versions.
 
