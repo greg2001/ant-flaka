@@ -1,3 +1,6 @@
+1.03.01 (unofficial)
+* BUGFIX: Issue 21:	Lists born from split() seem to have zero size() [https://code.google.com/p/flaka/issues/detail?id=21]
+  
 1.03.00 (unofficial)
 * BUGFIX: Issue 19:	Flaka impacts default Ant task local [http://code.google.com/p/flaka/issues/detail?id=19]
 * BUGFIX: All whitespace-only strings are be converted to empty strings, so that
@@ -12,7 +15,7 @@ Patch counter bumped to avoid confusion.
 * build.xml: updated to generate Java 1.5 compatible code
 * build.xml: use package-dist to generate a release build. Ensures that 1.8
   is used. Would be better though to test that all class files are packaged. 
-
+  
 1.02.00
 * updated to JUEL 2.2.1 (was 2.1.1-rc4)
 * using ant-antunit (1.1) to run Ant based unit tests

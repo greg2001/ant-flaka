@@ -211,6 +211,7 @@ public class ELBinding {
     try {
       m = obj.getClass().getMethod(method);
       if (m != null) {
+        m.setAccessible(true);
         r = m.invoke(obj, (Object[]) null);
       }
     } catch (Exception e) {
@@ -225,6 +226,7 @@ public class ELBinding {
     try {
       f = obj.getClass().getField(name);
       if (f != null) {
+        f.setAccessible(true);
         r = f.get(obj);
       }
     } catch (Exception e) {
