@@ -40,6 +40,7 @@ import javax.el.ResourceBundleELResolver;
 
 import org.apache.tools.ant.ComponentHelper;
 import org.apache.tools.ant.Project;
+import org.apache.tools.ant.PropertyHelper;
 
 /**
  * The main resolver.
@@ -157,8 +158,7 @@ public class Resolver extends ELResolver {
       }
       case Wrapper.PROPERTY: {
         context.setPropertyResolved(true);
-        r = this.project.getProperties().get(property);
-        // r= Static.property(this.project,property);
+        r = PropertyHelper.getPropertyHelper(this.project).getProperty(property);
         break;
       }
       case Wrapper.REFERENCE: {
@@ -354,7 +354,7 @@ public class Resolver extends ELResolver {
     if (obj == null)
       obj = this.project.getReference(property);
     if (obj == null)
-      obj = this.project.getProperties().get(property);
+      obj = PropertyHelper.getPropertyHelper(this.project).getProperty(property);
     return obj;
   }
 

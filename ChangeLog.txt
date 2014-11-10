@@ -1,3 +1,9 @@
+1.03.02 (unofficial)
+* NEW: Flaka is now able to see Ant local properties:
+  <local name="local_property"/>
+  <property name="local_property" value="test"/>
+  <echo>#{local_property}</echo>
+  
 1.03.01 (unofficial)
 * BUGFIX: Issue 21:	Lists born from split() seem to have zero size() [https://code.google.com/p/flaka/issues/detail?id=21]
   
