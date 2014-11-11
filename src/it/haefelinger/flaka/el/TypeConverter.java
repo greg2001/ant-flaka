@@ -48,7 +48,8 @@ public class TypeConverter extends TypeConverterImpl {
       return (Boolean) value;
     }
     if (value instanceof String) {
-      return ((String) value).equals("") ? Boolean.FALSE : Boolean.TRUE;
+      String v = ((String) value).trim().toLowerCase();
+      return Boolean.valueOf(v.equals("true") || v.equals("yes") || v.equals("on"));
     }
     if (value instanceof File) {
       return ((File) value).exists() ? Boolean.TRUE : Boolean.FALSE;

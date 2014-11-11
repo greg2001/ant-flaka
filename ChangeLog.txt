@@ -1,3 +1,10 @@
+1.03.03 (unofficial)
+* BUGFIX: String-to-boolean conversion to accept "true", "yes" and "on" (case-insensitive) as true:
+  <property name="some_property" value="true"/>
+  <fl:when test="some_property"> <!-- evaluates to true now -->
+    ...
+* Removed some obsolete code
+  
 1.03.02 (unofficial)
 * NEW: Flaka is now able to see Ant local properties:
   <local name="local_property"/>
