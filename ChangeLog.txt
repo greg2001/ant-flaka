@@ -1,3 +1,11 @@
+1.03.04 (unofficial)
+* NEW: EL method invocation support:
+  <echo>#{ 'foo'.toUpperCase().replaceAll('FOO', 'BAR') } == BAR</echo>
+* NEW: file.tounix property:
+  <echo>#{ 'C:\\Windows\\System32'.tofile.tounix } == C:/Windows/System32</echo>
+* UPDATE: string.tofile property now resolves relative paths using project.resolveFile(string) 
+  instead of new File(project.getBaseDir(), string) to be consistent with Ant
+  
 1.03.03 (unofficial)
 * BUGFIX: String-to-boolean conversion to accept "true", "yes" and "on" (case-insensitive) as true:
   <property name="some_property" value="true"/>

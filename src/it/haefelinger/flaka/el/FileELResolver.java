@@ -148,6 +148,11 @@ public class FileELResolver extends ELResolver {
         context.setPropertyResolved(true);
         return r;
       }
+      if (k.equals("tounix")) {
+        r = b.toString().replace('\\', '/');
+        context.setPropertyResolved(true);
+        return r;
+      }
     } catch (Exception e) {
       return null;
     }

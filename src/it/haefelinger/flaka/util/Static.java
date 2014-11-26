@@ -1536,23 +1536,14 @@ final public class Static {
   }
 
   static final public File toFile(Project project, String s) {
-    File f;
-
-    if (s != null)
-      s = s.trim();
-    if (s == null || s.matches("\\s*"))
+    if(s == null)
       return project.getBaseDir();
-
-    if (s.matches("\\.\\.?")) {
-      return new File(s);
-    }
-
-    f = new File(s);
-    if (f.isAbsolute() == false) {
-      f = project.getBaseDir();
-      f = new File(f, s);
-    }
-    return f;
+    
+    s = s.trim();
+    if(s.isEmpty())
+      return project.getBaseDir();
+    
+    return project.resolveFile(s);
   }
 
   @SuppressWarnings("deprecation")

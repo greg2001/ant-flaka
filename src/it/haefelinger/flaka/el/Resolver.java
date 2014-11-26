@@ -62,7 +62,6 @@ public class Resolver extends ELResolver {
 
   static public ELResolver makeResolver(Project project) {
     CompositeELResolver cr = new CompositeELResolver();
-
     cr.add(new StringELResolver(project));
     cr.add(new FileELResolver());
     cr.add(new AntELResolver());
@@ -462,4 +461,9 @@ public class Resolver extends ELResolver {
     }
   }
 
+  @Override
+  public Object invoke(ELContext context, Object base, Object method, Class<?>[] paramTypes, Object[] params)
+  {
+    return delegate.invoke(context, base, method, paramTypes, params);
+  }
 }

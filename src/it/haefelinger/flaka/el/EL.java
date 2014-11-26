@@ -538,7 +538,7 @@ public final class EL {
     private static final long serialVersionUID = 6510509119020544874L;
 
     public MyBuilder() {
-      super(Builder.Feature.VARARGS);
+      super(Builder.Feature.VARARGS, Builder.Feature.METHOD_INVOCATIONS);
     }
 
     /**
@@ -569,6 +569,7 @@ public final class EL {
     Properties P = new Properties();
     P.setProperty(tc_key, tc_val);
     P.setProperty("javax.el.varArgs", "true");
+    P.setProperty("javax.el.methodInvocations", "true");
     Builder builder = new MyBuilder();
     TreeStore store = new TreeStore(builder, new Cache(10));
     TypeConverter tc = new it.haefelinger.flaka.el.TypeConverter();
