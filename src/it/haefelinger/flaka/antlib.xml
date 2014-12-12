@@ -74,8 +74,7 @@
   <taskdef name="uploadtask" classname="it.haefelinger.flaka.HttpUploadTask" />
   <taskdef name="when" classname="it.haefelinger.flaka.When" />
   <taskdef name="xmlmerge" classname="it.haefelinger.flaka.XmlMerger" />
-
-
+  <taskdef name="copy" classname="it.haefelinger.flaka.Copy" />
 
   <!--  deprecated: stay clear from it -->
   <macrodef name="install-reference-handler">

@@ -1,3 +1,7 @@
+1.03.05 (unofficial)
+* NEW: task "copy" extending the standard Ant copy task with "preserveexecutable" attribute
+  allowing the user to preserve execute permissions when copying files (Java 6+ and Ant 1.8.2+ required):
+  <fl:copy file="foo" tofile="bar" preserveexecutable="true"/>
 1.03.04 (unofficial)
 * NEW: EL method invocation support:
   <echo>#{ 'foo'.toUpperCase().replaceAll('FOO', 'BAR') } == BAR</echo>
