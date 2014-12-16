@@ -1,3 +1,6 @@
+1.03.06 (unofficial)
+* BUGFIX: task "for" to iterate in arrays
+
 1.03.05 (unofficial)
 * NEW: task "copy" extending the standard Ant copy task with "preserveexecutable" attribute
   allowing the user to preserve execute permissions when copying files (Java 6+ and Ant 1.8.2+ required):

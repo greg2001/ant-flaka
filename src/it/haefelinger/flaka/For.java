@@ -103,6 +103,12 @@ public class For extends it.haefelinger.flaka.Task implements TaskContainer {
       iter = ((Iterable) obj).iterator();
       return iter;
     }
+    
+    if (obj instanceof Object[]) {
+      iter = Arrays.asList((Object[])obj).iterator();
+      return iter;
+    }
+    
     // If we are a map, then we iterate over the keys.
     if (obj instanceof Map) {
       Set keys = ((Map) obj).keySet();
@@ -111,6 +117,7 @@ public class For extends it.haefelinger.flaka.Task implements TaskContainer {
       iter = Arrays.asList(keys.toArray()).iterator();
       return iter;
     }
+    
     // Otherwise, we create an array and iterate over
     // it's one and only argument.
     iter = Arrays.asList(obj).iterator();
